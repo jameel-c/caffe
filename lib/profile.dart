@@ -8,6 +8,8 @@ class Sample extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+
+
     return MaterialApp(
 
       home: Profile(),
@@ -22,13 +24,16 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    var width = screenSize.width;
+    var height = screenSize.height;
     return Scaffold(
       //backgroundColor: Colors.lightBlue,
         body: SingleChildScrollView(
           child:Column(
             children: <Widget>[
               Container(
-                height: MediaQuery.of(context).size.height * 0.35,
+                height: height * 0.4,
                 decoration: BoxDecoration(
                   gradient: new LinearGradient(
 

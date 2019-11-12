@@ -2,8 +2,14 @@
 import 'package:english_words/english_words.dart' as prefix0;
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:sample_work/menu.dart';
+import 'package:sample_work/profile.dart';
+import 'package:sample_work/search.dart';
 
+import 'login.dart';
+import 'navigation.dart';
 
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -17,7 +23,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.white,
       ),
 
-      home: RandomWords(),
+      home: Nav(),
     );
   }
 }

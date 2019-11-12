@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sample_work/profile.dart';
 
 
-void main() => runApp(Login());
 
 class Login extends StatefulWidget {
   @override
@@ -12,57 +12,90 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
 
-    return MaterialApp(
+    MediaQueryData mediaQueryData = MediaQuery.of(context);
 
-      home: Scaffold(
-
-        body: SingleChildScrollView(
-          child: Column ( children: <Widget>[
+    return Scaffold(
+      body: SingleChildScrollView(
+          child: Column (crossAxisAlignment : CrossAxisAlignment.start, children: <Widget>[
             Container(
-              height:  300,
-              width: 350,
+              height: mediaQueryData.size.height  * .35 ,//MediaQuery.of(context).size.height/ 5,
+              width: MediaQuery.of(context).size.width,
+
               decoration: BoxDecoration(
                   color: Colors.redAccent,
                   image: DecorationImage(
                       fit: BoxFit.cover,
                       image: AssetImage('images/cristano.jpg')),
                   borderRadius: BorderRadius.only(
-
                       bottomLeft: Radius.circular(30.0),
                       bottomRight: Radius.circular(30.0)
                   )
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+
                 children: <Widget>[
                   SizedBox(
-                    height: 200,
-                  ),
 
-                  Text('“To Be The Best You Need The Best.”',
-                    style: TextStyle(color: Colors.white),
-                    textAlign: TextAlign.left,
-                  ),
-                  Text('~ cr7',
-                    style: TextStyle(color: Colors.white)
-                    , textAlign: TextAlign.left,
-
-                  ),
-                  SizedBox(
-                    height: 20,
+                    height: mediaQueryData.size.height * 0.23,
                   ),
                   Row(
                     children: <Widget>[
+                      Padding(padding: EdgeInsets.only(left: 20)
+                      ),
+
+
+                      Text('“To Be The Best You Need The Best.”',
+                        style: TextStyle(color: Colors.white),
+                        textAlign: TextAlign.left,maxLines: 2,
+
+                      ),
+                    ],
+
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Padding(padding: EdgeInsets.only(left: 20,top: 40)
+                      ),
+
+                      Text('~ cr7',
+                        style: TextStyle(color: Colors.white)
+                        , textAlign: TextAlign.left,
+
+                      ),
+
+                    ],
+                  ),
+
+
+//                  SizedBox(
+//                    height: 20,
+//                  ),
+                  Row(
+                    children: <Widget>[
                       SizedBox(
-                        width: 180,
+                        width: mediaQueryData.size.width * 0.5,
                       ),
                       Text('SIGN IN',
                           style: TextStyle(color: Colors.white)),
 
                       SizedBox(
-                        width: 20,
+                        width: 40,
                       ),
-                      Text('SIGN UP',
-                          style: TextStyle(color: Colors.white)),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(
+                            builder: (BuildContext context) => Profile()
+                          ));
+                        },
+                        child: new Text('SIGN UP',
+                          style: TextStyle(color: Colors.white,decoration: TextDecoration.underline),
+
+                        ),
+                      )
+
+
                     ],
                   )
                 ],
@@ -115,26 +148,28 @@ class _LoginState extends State<Login> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 10),
+              margin: EdgeInsets.only(left: 20,right: 20),
               child: Row(
                 children: <Widget>[
                   Icon(Icons.arrow_back),
                   SizedBox(width: 10),
                   Text('Social Login'),
-                  SizedBox(width: 150),
+                  Spacer(),
+
                   FloatingActionButton(
+
                     backgroundColor: Colors.redAccent,
                     elevation: 0.0,
                     child: new Icon(Icons.arrow_forward),
-                  )
+                  ),
+
                 ],
               ),
             )
           ],
-        )
+          )
 
 
-      ),
       ),
     );
   }
