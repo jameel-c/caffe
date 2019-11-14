@@ -7,6 +7,23 @@ class UserRegistraion extends StatefulWidget {
 
 class _UserRegistraionState extends State<UserRegistraion> {
   @override
+  Widget _textfield(String text){
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: TextField(
+        decoration: InputDecoration(
+            border: OutlineInputBorder(
+              //borderRadius: new BorderRadius.circular(25.0),
+              borderSide: new BorderSide(
+              ),
+            ),
+
+            labelText: text,
+            fillColor: Colors.black
+        ),
+      ),
+    );
+  }
   Widget build(BuildContext context) {
     MediaQueryData mediaQueryData = MediaQuery.of(context);
 
@@ -18,6 +35,8 @@ class _UserRegistraionState extends State<UserRegistraion> {
       ),
       body:SingleChildScrollView(
         child:  Column(
+
+
           children: <Widget>[
             Container(
               height: mediaQueryData.size.height * 0.2,
@@ -28,86 +47,12 @@ class _UserRegistraionState extends State<UserRegistraion> {
                 ),
               ),
             ),
-            Container(
-              margin: EdgeInsets.all( 10),
+            _textfield('email'),
+            _textfield('password'),
+            _textfield('mobile no'),
+            _textfield('password'),
+            _textfield('confirm password'),
 
-              child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: new BorderRadius.circular(25.0),
-                      borderSide: new BorderSide(
-                      ),
-                    ),
-
-                    labelText:'name',
-                    fillColor: Colors.black
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all( 10),
-
-              child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: new BorderRadius.circular(25.0),
-                      borderSide: new BorderSide(
-                      ),
-                    ),
-
-                    labelText:'email',
-                    fillColor: Colors.black
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all( 10),
-
-              child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: new BorderRadius.circular(25.0),
-                      borderSide: new BorderSide(
-                      ),
-                    ),
-
-                    labelText:'mobile no',
-                    fillColor: Colors.black
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all( 10),
-
-              child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: new BorderRadius.circular(25.0),
-                      borderSide: new BorderSide(
-                      ),
-                    ),
-
-                    labelText:'password',
-                    fillColor: Colors.black
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.all( 10),
-
-              child: TextField(
-                decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderRadius: new BorderRadius.circular(25.0),
-                      borderSide: new BorderSide(
-                      ),
-                    ),
-
-                    labelText:'confirm password',
-                    fillColor: Colors.black
-                ),
-              ),
-            ),
             Container(
               margin: EdgeInsets.all( 10),
 
@@ -115,7 +60,7 @@ class _UserRegistraionState extends State<UserRegistraion> {
               height: mediaQueryData.size.height * 0.08,
               child: RaisedButton(
                 color: Colors.redAccent,
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
                 onPressed: () {},
                 child: Text("SIGN UP"),
               ),
@@ -125,5 +70,6 @@ class _UserRegistraionState extends State<UserRegistraion> {
       )
 
     );
+
   }
 }

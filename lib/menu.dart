@@ -61,37 +61,40 @@ class _MenuState extends State<Menu> {
           SizedBox(height: 20,),
           Expanded(child: ListView.builder(itemCount:  10, padding: const EdgeInsets.all(0.0),itemBuilder: (BuildContext context,int index){
              return Container(
-               padding: EdgeInsets.all(6),
-               child: Row(
-                 children: <Widget>[
-                   Container(
-                     width: 60.0,
-                     height: 60.0,
-                     decoration: new BoxDecoration(
-                       borderRadius: BorderRadius.circular(6),
-                         shape: BoxShape.rectangle,
-                         image: new DecorationImage(
-                             fit: BoxFit.fill,
-                             image: new AssetImage('images/burger.jpg')
-                         )
-                         
-                     ) ,
-                   ),
-                   Padding(padding: EdgeInsets.only(left: 12),),
-                   Container(
-                     child: Column(
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children: <Widget>[
-                         Text('ifthar',),
-                         Padding(padding: EdgeInsets.only(top: 4)),
-                         Text('Buger'),
-                         Padding(padding: EdgeInsets.only(top: 4)),
-                         Text('150 per person',)
-                       ],
+               padding: EdgeInsets.only(top: 4,left: 6,right: 6),
+               child: Card(
+                 color: Colors.white,
+                 child: Row(
+                   children: <Widget>[
+                     Container(
+                       width: 60.0,
+                       height: 60.0,
+                       decoration: new BoxDecoration(
+                           borderRadius: BorderRadius.circular(6),
+                           shape: BoxShape.rectangle,
+                           image: new DecorationImage(
+                               fit: BoxFit.fill,
+                               image: new AssetImage('images/burger.jpg')
+                           )
+
+                       ) ,
                      ),
-                   ),
-                 ],
-               ),
+                     Padding(padding: EdgeInsets.only(left: 12),),
+                     Container(
+                       child: Column(
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: <Widget>[
+                           Text('ifthar',),
+                           Padding(padding: EdgeInsets.only(top: 4)),
+                           Text('Buger'),
+                           Padding(padding: EdgeInsets.only(top: 4)),
+                           Text('150 per person',)
+                         ],
+                       ),
+                     ),
+                   ],
+                 ),
+               )
              );
           })),
         ],

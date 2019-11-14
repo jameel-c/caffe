@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sample_work/cart.dart';
 import 'package:sample_work/home.dart';
+import 'package:sample_work/navigation.dart';
 import 'package:sample_work/profile.dart';
 import 'package:sample_work/user_registration.dart';
 
@@ -164,7 +166,7 @@ class _LoginState extends State<Login> {
                     elevation: 0.0,
                     onPressed: (){
                       Navigator.push(context, MaterialPageRoute(
-                          builder: (BuildContext context) => Home()
+                          builder: (BuildContext context) => Nav()
                       ));
                     },
                     child: new Icon(Icons.arrow_forward),

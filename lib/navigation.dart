@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sample_work/cart.dart';
+import 'package:sample_work/home.dart';
 import 'package:sample_work/profile.dart';
 import 'package:sample_work/search.dart';
 
@@ -34,11 +36,11 @@ class Nav extends StatelessWidget {
           ),
           RaisedButton(
 
-            child:  new Text('Login'),
+            child:  new Text('cart'),
             onPressed: (){
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Login()),
+                MaterialPageRoute(builder: (context) => Cart()),
               );
             },
           ),
@@ -49,6 +51,16 @@ class Nav extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Search()),
+              );
+            },
+          ),
+          RaisedButton(
+
+            child:  new Text('home'),
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Home()),
               );
             },
           ),

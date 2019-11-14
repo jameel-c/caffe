@@ -6,6 +6,7 @@ import 'package:sample_work/cart.dart';
 import 'package:sample_work/item_details.dart';
 import 'package:sample_work/menu.dart';
 import 'package:sample_work/profile.dart';
+import 'package:sample_work/profile_edit.dart';
 import 'package:sample_work/search.dart';
 
 import 'login.dart';

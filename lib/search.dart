@@ -15,36 +15,27 @@ class _SearchState extends State<Search> {
         centerTitle: true,
         title: Text('Search',textAlign: TextAlign.center,style: TextStyle(color: Colors.white),
         ),
-        elevation: 0.0,
+        elevation: 5.0,
       ),
       body: new Column(
         children: <Widget>[
-          SizedBox(height: 20,),
-          Text('Hello, I am Tasty. What',
-            style: TextStyle(
-            fontSize: 25,
-              fontWeight: FontWeight.bold
-          ),
-            textAlign: TextAlign.left,
-          ),
-          Text('are you looking for ?',
-            style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold
-            ),
-            textAlign: TextAlign.left,
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Card(
-            child: new ListTile(
-              leading: new Icon(Icons.search,color: Colors.red,),
-              title: new TextField(
-               // controller: controller,
-                decoration: new InputDecoration(
-                  hintText: 'Search',border: InputBorder.none
+
+          Container(
+            color:Colors.redAccent,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                child: new ListTile(
+                  leading: new Icon(Icons.search,color: Colors.red,),
+                  trailing: new Icon(Icons.cancel),
+                  title: new TextField(
+                   // controller: controller,
+                    decoration: new InputDecoration(
+                      hintText: 'Search',border: InputBorder.none
+                    ),
+                  ),
                 ),
+                
               ),
             ),
           ),
